@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<head>
+	<title>Recunoaste culoarea</title>
+	<link rel="stylesheet" type="text/css" href="css.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+	<div id="titlu">
+		<ul>
+			<li>Recunoaste Culoarea</li>
+			<li id="score">Score: 0/10</li>
+	</div>
+
+	<div class="haida">
+	</div>
+	<div class="raspuns">
+	<ul>
+		<li><input type="radio" name="rasp" value="a" id="raspa" ><label for="raspa">Rosu</label><br/></li>
+		<li><input type="radio" name="rasp" value="b" id="raspb" ><label for="raspb">Albastru</label><br/></li>
+		<li><input type="radio" name="rasp" value="c" id="raspc" ><label for="raspc">Verde</label><br/></li>
+		<li><input type="radio" name="rasp" value="d" id="raspd" ><label for="raspd">Galben</label><br/></li>
+	</ul>
+	</div>
+	<div id="results"  ">
+		<button type="button" id="go">Verifica raspunsul</button>
+	</div>
+	<script>
+	var i = 0;
+	var j = 0;
+	var x = 5;
+	var color = ['#FF0000','#0000FF','#00FF00','#FFFF00'];
+	var random = function() {
+    return Math.floor(Math.random()*4);
+	};
+
+
+
+    
+       	$(function () {
+    		$("#go").click(function () {
+    			if(i === 0){
+  					x = random();
+        			$(".haida").css('background-color', color[x]);
+        			i = i + 1;
+  				}
+  				else{
+  					i = i + 1;
+  					if(x===0 && document.getElementById("raspa").checked == true){
+       			 	j++;
+				}
+				if(x===1 && document.getElementById("raspb").checked == true){
+        			j++;
+				}
+				if(x===2 && document.getElementById("raspc").checked == true){
+       			 	j++;
+				}
+				if(x===3 && document.getElementById("raspd").checked == true){
+       		 		j++;
+				}
+       			 document.getElementById("score").innerHTML = "Score: " +j+"/10";
+        	
+        	if(i===11){
+      		  		if(j<5){
+   		 			alert("You Scored"+j+"points out of 10. You might want to see a doctor.");
+   		 		}else{if(j<8){
+   		 			alert("You Scored"+j+"points out of 10. Try going to kindergarden, you might learn something.");
+   		 			}else{if(j===10){
+   		 					alert("You Scored"+j+"points out of 10. Great Job");
+   		 				}else{
+   		 				alert("You Scored"+j+"points out of 10. Maybe you misclicked, see if u can get a 10");
+   		 				}
+   		 			}
+
+   		 		}
+   		 		i = 0;
+        		j = 0;
+        		document.getElementById("score").innerHTML = "Score: " +i+"/10";
+       			location.reload();
+   		 	}
+
+       		x = random();
+        	$(".haida").css('background-color', color[x]);
+        	}
+
+        	
+    			});
+			});
+
+	</script>
+</body>
+.

@@ -1,0 +1,40 @@
+body{
+	height:500px;
+	width:1000px;
+	margin:auto;
+}
+li {
+	list-style: none;
+}
+#titlu {
+	margin-top:50px;
+	text-align:center;
+	margin-bottom:40px;
+}
+.haida {
+	height:200px;
+	width:300px;
+	margin:auto;
+	background-color:grey;
+	border-radius:20px;
+}
+.raspuns{
+	height:100px;
+	width:200px;
+	margin:auto;
+	display:block;
+
+}
+#results{
+	text-align:center;
+	margin-top:0px;
+	border-radius:15px;
+}
+#go{
+	border-radius:15px;
+	background-color:white;
+	border:1px solid grey;
+	color:blue;
+	font-weight:bold;
+	font-size:15px;
+}
