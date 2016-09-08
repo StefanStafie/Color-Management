@@ -1,3 +1,25 @@
+#good{
+	height:100px;
+	width:210px;
+	margin:auto;
+}
+#good div{
+	padding:0px;
+	margin:0px;
+	height: 90px;
+	width:90px;	
+	background-size: 100% 100%;
+}
+#choice1{
+	display:none;
+	float:right;
+	background-image: url(https://pixabay.com/static/uploads/photo/2016/03/31/14/37/check-mark-1292787_960_720.png);
+}
+#choice2{
+	display:none;
+	background-image: url(http://vignette1.wikia.nocookie.net/uncyclopedia/images/6/60/X_mark.png/revision/latest?cb=20070730175143);
+}
+
 #collumn{
 	background-image:red;
 	border-radius:50px;

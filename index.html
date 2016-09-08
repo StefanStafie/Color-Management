@@ -24,6 +24,12 @@
 	<div id="results"  ">
 		<button type="button" id="go">Verifica raspunsul</button>
 	</div>
+	<div id="good">
+		<div id="choice1"></div>
+		<div id="choice2"></div>
+	</div>
+
+
 	<script>
 	var i = 0;
 	var j = 0;
@@ -36,55 +42,63 @@
 
 
     
-       	$(function () {
-    		$("#go").click(function () {
-    			if(i === 0){
-  					x = random();
-        			$(".haida").css('background-color', color[x]);
-        			i = i + 1;
-  				}
-  				else{
-  					i = i + 1;
-  					if(x===0 && document.getElementById("raspa").checked == true){
-       			 	j++;
-				}
-				if(x===1 && document.getElementById("raspb").checked == true){
+$(function () {
+   	$("#go").click(function () {
+    	if(i === 0){
+  			x = random();
+   			$(".haida").css('background-color', color[x]);
+ 			i = i + 1;
+		}else{
+  			i = i + 1;
+  			if(x===0 && document.getElementById("raspa").checked == true){
+       		 	j++;
+       		 	$("#choice1").fadeIn(10);
+       		 	$("#choice1").fadeOut(1000);
+			}else{if(x===1 && document.getElementById("raspb").checked == true){
         			j++;
+        			$("#choice1").fadeIn(10);
+       			 	$("#choice1").fadeOut(1000);
+				}else{if(x===2 && document.getElementById("raspc").checked == true){
+       			 		j++;
+       			 		$("#choice1").fadeIn(10);
+       			 		$("#choice1").fadeOut(1000);
+					}else{if(x===3 && document.getElementById("raspd").checked == true){
+       		 				j++;
+       		 				$("#choice1").fadeIn(10);
+       			 			$("#choice1").fadeOut(1000);
+						}else{
+							$("#choice2").fadeIn(10);
+       			 			$("#choice2").fadeOut(1000);
+						}
+					}
 				}
-				if(x===2 && document.getElementById("raspc").checked == true){
-       			 	j++;
-				}
-				if(x===3 && document.getElementById("raspd").checked == true){
-       		 		j++;
-				}
-       			 document.getElementById("score").innerHTML = "Score: " +j+"/10";
+			}
+       	document.getElementById("score").innerHTML = "Score: " +j+"/10";
         	
-        	if(i===11){
-      		  		if(j<5){
-   		 			alert("You Scored"+j+"points out of 10. You might want to see a doctor.");
-   		 		}else{if(j<8){
-   		 			alert("You Scored"+j+"points out of 10. Try going to kindergarden, you might learn something.");
-   		 			}else{if(j===10){
-   		 					alert("You Scored"+j+"points out of 10. Great Job");
-   		 				}else{
+        if(i===11){
+      		if(j<5){
+   		 		alert("You Scored"+j+"points out of 10. You might want to see a doctor.");
+   		 	}else{if(j<8){
+   		 		alert("You Scored"+j+"points out of 10. Try going to kindergarden, you might learn something.");
+   		 		}else{if(j===10){
+   		 			alert("You Scored"+j+"points out of 10. Great Job");
+   		 			}else{
    		 				alert("You Scored"+j+"points out of 10. Maybe you misclicked, see if u can get a 10");
-   		 				}
    		 			}
-
    		 		}
-   		 		i = 0;
-        		j = 0;
-        		document.getElementById("score").innerHTML = "Score: " +i+"/10";
-       			location.reload();
    		 	}
-
-       		x = random();
-        	$(".haida").css('background-color', color[x]);
-        	}
+   		 	i = 0;
+        	j = 0;
+        	document.getElementById("score").innerHTML = "Score: " +i+"/10";
+       		location.reload();
+   			}
+		x = random();
+        $(".haida").css('background-color', color[x]);
+        }
 
         	
-    			});
-			});
+   	});
+});
 
 	</script>
 </body>
