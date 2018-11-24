@@ -4,7 +4,7 @@
 	<link rel="stylesheet" type="text/css" href="css.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 </head>
-<body onload="go">
+<body class="go">
 	<div id="titlu">
 		<ul>
 			<li>Recunoaste Culoarea</li>
@@ -22,7 +22,7 @@
 	</ul>
 	</div>
 	<div id="results"  ">
-		<button type="button" id="go">Verifica raspunsul</button>
+		<button type="button" id="go" class="go">Verifica raspunsul</button>
 	</div>
 	<div id="good">
 		<div id="choice1"></div>
@@ -43,7 +43,7 @@
 
     
 $(function () {
-   	$("#go").click(function () {
+   	$(".go").click(function () {
     	if(i === 0){
   			x = random();
    			$(".haida").css('background-color', color[x]);
